@@ -3,14 +3,21 @@
 
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     cursor:default;
 }
 body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     height: 100%;
     width: 100%;
-    background-color: #000000d0;
+    background-color: black;
+    box-sizing: border-box;
+}
+.layout{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr 1fr 1fr 1fr auto;
 }
 
 nav{
@@ -30,6 +37,9 @@ nav{
     width: auto;
     margin: auto;
 }
+.logo img{
+    width: 8vw;
+}
 
 
 .nav-mid-item{
@@ -41,8 +51,27 @@ nav{
     font-size: 1.3vw;
     color: rgba(255, 255, 255, 0.514);
 }
+.nav-mid-item img {
+    filter: opacity(0.6);
+}
 .last-nav img{
     height: 3.5vh;
+}
+
+@media screen and (max-width: 958px) {
+    .logo img{
+        width: 20vw;
+    }
+    .nav-mid-item{
+        gap: 11px;
+    }
+    .nav-mid-item span{
+        font-size: 2.5vw;
+    }
+    .last-nav img{
+        height: 2vh;
+    }
+
 }
 
 .main-first{
@@ -57,11 +86,10 @@ nav{
     position: relative;
     height: 100vh;
 
-    
-
 }
 .front-txt-div{
     width: 50%;
+    padding: 1vw;
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -69,20 +97,19 @@ nav{
     top: 50px;
 }
 .title-head{
-    font-size: 3.2vw;
-    font-weight: 500;
+    font-size: 50px;
+    font-weight: 700;
     color: white;
     line-height: 50px;
+    word-wrap: break-word;  
 }
 .title-pera{
     color: white;
     margin-top: 30px;
-    font-size: 1.8vw;
+    font-size: 25px;
     font-weight: 450;
 }
-.nav-mid-item img {
-    filter: opacity(0.6);
-}
+
 .btn{
     margin-top: 1vw;
 }
@@ -102,17 +129,191 @@ button:hover{
     
     background-color: #2fa9e6;
 }
+
+@media screen and (max-width: 958px) and (orientation: portrait) {
+
+    .main-first{
+        background-image: linear-gradient(
+            to top,
+            #000 50%,
+            transparent 58%
+          ), url("Resourse/MLP.jpg");
+        background-size: auto;
+    
+    }
+    .front-txt-div{
+        width: 95%;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left: 0px;
+        top: 430px;
+    }
+    front-txt-div span{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .title-head{
+        font-size: 7vw;
+        font-weight: 700;
+        line-height: 20px;
+    }
+    .title-pera{
+        font-size: 3vw;
+        text-align: center;
+    }
+    .btn{
+        margin-top: 5vw;
+    }
+    .btn button{
+        padding: 3vw 20vw;
+        font-size: 2.5vh;
+    }
+
+}
 .main-second{
     background-image: linear-gradient(
         to right,
         #000 45%,
         transparent 58%
       ), url("Resourse/TVOD_MLP_Right.jpg");
-    background-position: right top;
-    background-repeat: no-repeat;
-    background-size: cover;
+      background-position: right top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      height: 100vh;
+}
+
+
+.title-head-two{
+    font-weight: 700;
+    font-size: 50px;
+}
+.title-pera-two{
+    font-size: 25px;
+}
+.btn-two{
+    padding-top: 10vh;
+}
+.btn-two button{
+    padding: 1.2vw 8vw;
+    font-size: 1.2vw;
+}
+@media screen and (max-width: 958px) {
+
+    .main-second{
+        background-image: linear-gradient(
+            to top,
+            #000 55%,
+            transparent 58%
+          ), url("Resourse/TVOD_MLP_Right.jpg");
+        background-size: auto;
+    
+    }
+    
+    .mob-div{
+        position: relative;
+        top: 550px;
+    }
+    .title-head-two{
+        font-size: 7vw;
+        font-weight: 700;
+        text-align: center;
+        line-height: 0px;
+    }
+    .title-pera-two{
+        font-size: 3vw;
+    }
+
+    .btn-two{
+        margin-top: -50px;
+    }
+    .btn-two button{
+        
+        padding: 3vw 20vw;
+        font-size: 2.2vh;
+    }
+
+}
+
+.main-three{
+    background-color: white;
     position: relative;
     height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.three{
+    
+    display: flex;
+    position: relative;
+    left: 60px;
+    top: -100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-head-three{
+    color: black;
+    font-size: 50px;
+    width: 80%;
+    font-weight: 700;
+}
+.title-pera-three{
+    width: 80%;
+    color: black;
+
+}
+.three-right{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 43%;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    gap: 7px;
+}
+.three-right img{
+    width: 14vw;
+}
+.three-right img:hover{
+    box-shadow: 0px 0px 10px 5px black;
+}
+@media screen and (max-width: 958px) {
+    .main-three{
+        flex-direction: column;
+
+    }
+    .three{
+        left: 0px;
+        top: 10px;
+        text-align: center;
+       
+    }
+    .three-right{
+        width: 45%;
+        grid-template-columns: auto auto;
+        position: absolute;
+        top: 200px;
+        right: 100px;
+        gap: 7px;
+    }
+    
+    .three-right img{
+        width: 20vw;
+    }
+    .title-head-three{
+        font-size: 25px;
+        width: 80%;
+        font-weight: 700;
+    }
+    .title-pera-three{
+        width: 90%;
+    
+    }
+
 }
 .main-fourth{
     background-image: linear-gradient(
@@ -124,83 +325,74 @@ button:hover{
       background-repeat: no-repeat;
       background-size: cover;
       position: relative;
-      height: 100vh;  
-}
-.title-head-two{
-    font-weight: 400;
-    font-size: 2.9vw;
-}
-.title-pera-two{
-    font-size: 1.5vw;
-    line-height: 0;
-    font-weight: 500;
-}
-.btn-two{
-    padding-top: 10vh;
-}
-.btn-two button{
-    padding: 1.2vw 8vw;
-    font-size: 1.2vw;
-}
-.main-three{
-    background-color: white;
-    position: relative;
-    height: 100vh;
-}
-.three{
-    left: 60px;
-    display: flex;
-}
-
-.title-head-three{
-    color: black;
-    font-size: 3.5vw;
-    width: 80%;
-    font-weight: 400;
-}
-.title-pera-three{
-    width: 80%;
-    color: black;
-    font-weight: 400;
-
-}
-.three-right{
-    display: grid;
-    width: 50%;
-    grid-template-columns: 200px 200px 200px;
-    justify-items: center;
-    gap: 7px;
-    align-items: center;
-    position: absolute;
-    top: 15px;
-    right: 0px;
-}
-.three-right img{
-    width: 200px;
-}
-.three-right img:hover{
-    box-shadow: 0px 0px 10px 5px black;
+      height: 100vh; 
 }
 .front-txt-div-four{
     width: 50%;
-    display: flex;
+    padding: 1vw;
+    display: block;
     flex-direction: column;
     position: absolute;
-    right: 30px;
+    right: 0px;
     top: 50px;
 }
 .title-pera-four{
-    font-size: 1.6vw;
+    display: flex;
+    font-size: 25px;
     margin-bottom: 5vh;
 }
-.title-head-four{
-    line-height: 4px;
-}
+
 .btn-four{
     margin-top: 1vh;
 }
 .btn-four button{
     padding: 1vw 7vw;
+}
+@media screen and (max-width: 958px) {
+    .main-fourth{
+        background-image: linear-gradient(
+            to top,
+            #000 45%,
+            transparent 98%
+          ), url("Resourse/MLP_Template_Image_Left._SX1440_CR0\,0\,865\,675_QL80_AC_FP_.jpg");
+          background-size: contain;
+          
+    }
+    .front-txt-div-four{
+        width: 100%;
+        right: 0px;
+        top: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .title-head-four{
+        font-size: 30px;
+        font-weight: 700;
+        text-align: center;
+    }
+    .title-pera-four{
+        display: flex;
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 5vh;
+        width: 90%;
+    }
+
+    .title-pera-four{
+        text-align: center;
+    }
+    .btn-four{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn-four button{
+        padding: 2vw 7vw;
+        font-size: 5vw;
+    }
+
 }
 .footer{
     display: flex;
@@ -210,9 +402,11 @@ button:hover{
     position: relative;
     bottom: 0;
     height: 23vh;
-    background-color: rgba(0, 0, 0, 0.267);
+    width: 100%;
+    background-color: rgb(36, 36, 36);
 }
 .footer img{
+    width: 100px;
     position: absolute;
     top: 25px;
 }
@@ -229,4 +423,16 @@ button:hover{
     top: 100px;
     color: rgba(255, 255, 255, 0.507);
 }
+@media screen and (max-width: 958px) {
+    .footer img{
+        width: 100px;
+    }
+    .Foot-text{
+        gap: 20px;
+    }
+    .end{
+        top: 150px;
+    }
+}
+
 
